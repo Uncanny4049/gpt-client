@@ -45,7 +45,7 @@ type GetConversationInfo struct {
 
 func (api *GetConversations) Send() {
 	request, _ := http.NewRequest(api.Method, api.URL+"?"+url.Values{
-		"offset": []string{strconv.Itoa(api.Rq.Offset)},
+		"offset": []string{strconv.Itoa(api.Rq.Offset - 1)},
 		"limit":  []string{strconv.Itoa(api.Rq.Limit)},
 	}.Encode(), strings.NewReader(""))
 	response, _ := http.DefaultClient.Do(request)

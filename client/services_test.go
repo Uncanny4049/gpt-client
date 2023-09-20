@@ -16,7 +16,6 @@ func TestSendQuestion(t *testing.T) {
 
 	info := FindConversationWithTitle(title, 1, 20)
 	if info.ConversationId != "" {
-		// 仅为 talk.Rq 的部分属性赋值
 		talk.Rq.Model = info.Mapping[info.CurrentNode].Message.Metadata.ModelSlug
 		talk.Rq.ParentMessageId = info.Mapping[info.CurrentNode].Message.Id
 		talk.Rq.ConversationId = info.ConversationId
