@@ -1,4 +1,4 @@
-package client
+package api1
 
 import "time"
 
@@ -73,17 +73,17 @@ type TalkContentRS struct {
 type ConversationTitleRQ struct {
 	Title string `json:"title"`
 }
-type GetConversationRQ struct {
+type GetConversationRS struct {
 	Title             string                          `json:"title"`
 	CreateTime        float64                         `json:"create_time"`
 	UpdateTime        float64                         `json:"update_time"`
-	Mapping           map[string]GetConversationRqMap `json:"mapping"`
+	Mapping           map[string]GetConversationRsMap `json:"mapping"`
 	ModerationResults []interface{}                   `json:"moderation_results"`
 	CurrentNode       string                          `json:"current_node"`
 	ConversationId    string                          `json:"conversation_id"`
 }
 
-type GetConversationRqMap struct {
+type GetConversationRsMap struct {
 	Id      string `json:"id"`
 	Message struct {
 		Id     string `json:"id"`
