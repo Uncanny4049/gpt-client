@@ -54,7 +54,7 @@ func FindConversationWithTitle(title string, offset, limit int) api.GetConversat
 			return conversation.Rs
 		}
 	}
-	if conversations.Rs.Total > conversations.Rs.Limit*conversations.Rs.Offset {
+	if conversations.Rs.Total > conversations.Rs.Limit*(conversations.Rs.Offset+1) {
 		return FindConversationWithTitle(title, 1, conversations.Rs.Total)
 	}
 	return api.GetConversationRS{}

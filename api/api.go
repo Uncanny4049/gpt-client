@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-const BaseUrl = "https://cg.zpaul.org"
+const BaseUrl = "http://127.0.0.1:8001"
 
 type Api struct {
 	Name   string
